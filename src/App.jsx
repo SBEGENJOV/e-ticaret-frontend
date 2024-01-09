@@ -8,7 +8,7 @@ import ProductDetailsPage from "./Pages/ProductDetailsPage ";
 import AuthPage from "./Pages/AuthPage";
 import CartPage from "./component/Cart/CartPage ";
 import Blogs from "./component/Blog/Blog";
-import AdminUserPage from "./Pages/Admin/AdminUserPage";
+import AdminUserPage from "./Pages/admin/AdminUserPage";
 import CategoryPage from "./Pages/admin/Categories/CategoryPage";
 import UpdateCategoryPage from "./Pages/admin/Categories/UpdateCategoryPage";
 import CreateCategoryPage from "./Pages/admin/Categories/CreateCategoryPage ";
