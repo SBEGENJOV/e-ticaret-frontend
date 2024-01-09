@@ -11,6 +11,17 @@ export default function Header({ setIsSearchShow }) {
   const { pathname } = useLocation();
   const user = localStorage.getItem("user");
   const rol = JSON.parse(user).role;
+  const handleLinkClick = (event) => {
+    // Tıklama olayının varsayılan işleyişini engelle
+    event.preventDefault();
+  
+    // "rol" değerine göre yönlendirme yap
+    if (rol === "admin") {
+      window.location.href = "/admin";
+    } else {
+      window.location.href = "/user";
+    }
+  };
   return (
     <header>
       {/* //   <div className="global-notification">
@@ -219,15 +230,9 @@ export default function Header({ setIsSearchShow }) {
             <div className="header-right">
               <div className="header-right-links">
                 {user ? (
-                  rol === "admin" ? (
-                    <Link onClick={ window.location.href = "/admin"} className="header-account">
-                      <i className="bi bi-person"></i>
-                    </Link>
-                  ) : (
-                    <Link to={"/user"} className="header-account">
-                      <i className="bi bi-person"></i>
-                    </Link>
-                  )
+                 <Link to="/" onClick={handleLinkClick} className="header-account">
+                 <i className="bi bi-person"></i>
+               </Link>
                 ) : (
                   <Link to={"/auth"} className="header-account">
                     <i className="bi bi-person"></i>
