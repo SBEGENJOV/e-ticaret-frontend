@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 const ProductCategoryItem = ({ productItem, deg }) => {
-  const apiUrl = import.meta.env.VITE_WEB_BASE_URL;
   const deger = deg;
   const { cartItems, addToCart } = useContext(CartContext);
   const filteredCart = cartItems.find(
@@ -21,10 +20,10 @@ const ProductCategoryItem = ({ productItem, deg }) => {
       {deger && (
         <div className="product-item">
           <div className="product-image">
-            <a href={`${apiUrl}/product/${productItem._id}`}>
+            <Link to={`/product/${productItem._id}`}>
               <img src={productItem.img[0]} alt="" className="img1" />
               <img src={productItem.img[1]} alt="" className="img2" />
-            </a>
+            </Link>
           </div>
           <div className="product-info">
             <a href="$" className="product-title">
