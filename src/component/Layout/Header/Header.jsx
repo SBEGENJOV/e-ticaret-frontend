@@ -229,7 +229,7 @@ export default function Header({ setIsSearchShow }) {
             </div>
             <div className="header-right">
               <div className="header-right-links">
-                {user ? (
+                {user !==null ? (
                  <Link to="/" onClick={handleLinkClick} className="header-account">
                  <i className="bi bi-person"></i>
                </Link>
