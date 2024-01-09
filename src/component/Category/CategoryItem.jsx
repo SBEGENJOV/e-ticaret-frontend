@@ -8,7 +8,7 @@ export default function CategoryItem({ category }) {
         <img src={category.img} alt="" className="category-image" />
         <span className="category-title">{category.name}</span>
         </Link> */}
-      <a href={`$https://sbegenjov-e-commerce.netlify.app/productCategory/${category._id}`}>
+      <a href={`/productCategory/${category._id}`}>
         <img src={category.img} alt="" className="category-image" />
         <span className="category-title">{category.name}</span>
       </a>
