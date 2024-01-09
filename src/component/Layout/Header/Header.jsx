@@ -2,11 +2,10 @@ import { CartContext } from "../../../context/CartProvider";
 import { useContext } from "react";
 import "./Header.css";
 import PropTypes from "prop-types";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { LogoContext } from "../../../context/LogoProvidor";
 
 export default function Header({ setIsSearchShow }) {
-  const navigate = useNavigate();
   const { cartItems } = useContext(CartContext);
   const { logoVeri, logoRes } = useContext(LogoContext);
   const { pathname } = useLocation();
