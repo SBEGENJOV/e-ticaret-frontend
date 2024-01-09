@@ -220,7 +220,7 @@ export default function Header({ setIsSearchShow }) {
               <div className="header-right-links">
                 {user ? (
                   rol === "admin" ? (
-                    <Link to={"/admin"} className="header-account">
+                    <Link onClick={ window.location.href = "/admin"} className="header-account">
                       <i className="bi bi-person"></i>
                     </Link>
                   ) : (
