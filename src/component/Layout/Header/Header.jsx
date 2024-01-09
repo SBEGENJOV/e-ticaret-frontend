@@ -2,14 +2,16 @@ import { CartContext } from "../../../context/CartProvider";
 import { useContext } from "react";
 import "./Header.css";
 import PropTypes from "prop-types";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { LogoContext } from "../../../context/LogoProvidor";
 
 export default function Header({ setIsSearchShow }) {
+  const navigate = useNavigate();
   const { cartItems } = useContext(CartContext);
-  const { logoVeri,logoRes } = useContext(LogoContext);
+  const { logoVeri, logoRes } = useContext(LogoContext);
   const { pathname } = useLocation();
   const user = localStorage.getItem("user");
+  const rol = JSON.parse(user).role;
   return (
     <header>
       {/* //   <div className="global-notification">
@@ -30,7 +32,7 @@ export default function Header({ setIsSearchShow }) {
             <div className="header-left">
               <Link to={"/"} className="logo">
                 <img
-                  src={logoRes ?  logoVeri[0].img : <p>Hata</p>}
+                  src={logoRes ? logoVeri[0].img : <p>Hata</p>}
                   style={{ width: "80px", height: "auto" }}
                   alt="Logo"
                 />
@@ -218,9 +220,15 @@ export default function Header({ setIsSearchShow }) {
             <div className="header-right">
               <div className="header-right-links">
                 {user ? (
-                  <Link to={"/user"} className="header-account">
-                    <i className="bi bi-person"></i>
-                  </Link>
+                  rol === "admin" ? (
+                    <Link to={"/admin"} className="header-account">
+                      <i className="bi bi-person"></i>
+                    </Link>
+                  ) : (
+                    <Link to={"/user"} className="header-account">
+                      <i className="bi bi-person"></i>
+                    </Link>
+                  )
                 ) : (
                   <Link to={"/auth"} className="header-account">
                     <i className="bi bi-person"></i>
