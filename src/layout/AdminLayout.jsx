@@ -31,7 +31,7 @@ const AdminLayout = ({ children }) => {
       key: "1",
       icon: <DashboardOutlined />,
       label: "Dashboard",
-      path: "/admin",
+     // path: "/admin",
       onClick: () => {
         navigate(`/admin`);
       },
