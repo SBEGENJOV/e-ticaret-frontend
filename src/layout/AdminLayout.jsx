@@ -163,7 +163,7 @@ const AdminLayout = ({ children }) => {
       label: "Logo",
       path: "/logo",
       onClick: () => {
-        window.location.href = "/admin/logo";
+        navigate("/admin/logo");
       },
     },
     {
