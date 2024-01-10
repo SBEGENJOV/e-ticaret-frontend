@@ -22,7 +22,7 @@ const Success = () => {
               <Button type="primary">Ana Sayfa</Button>,
             </Link>,
 
-            <a href="/admin/orders" key={"order"}>
+            <a href="/alfa/orders" key={"order"}>
               <Button key="buy">Siparişlerim</Button>
             </a>,
           ]}

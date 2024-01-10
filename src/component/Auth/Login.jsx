@@ -25,10 +25,11 @@ const Login = () => {
       });
       if (response.ok) {
         const data = await response.json();
+        localStorage.removeItem("user");
         localStorage.setItem("user", JSON.stringify(data));
         message.success("Giriş Başarılı");
         if (data.role === "admin") {
-          window.location.href = "/admin";
+          window.location.href = "/alfa";
         } else {
           navigate("/");
         }

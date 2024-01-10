@@ -17,20 +17,17 @@ import { useNavigate } from "react-router-dom";
 
 const { Sider, Header, Content } = Layout;
 
-
-
 const AdminLayout = ({ children }) => {
   const navigate = useNavigate();
-  
 
   const menuItems = [
     {
       key: "1",
       icon: <DashboardOutlined />,
       label: "Dashboard",
-      path: "/admin",
+      path: "/alfa",
       onClick: () => {
-        navigate(`/admin`);
+        navigate(`/alfa`);
       },
     },
     {
@@ -42,17 +39,17 @@ const AdminLayout = ({ children }) => {
         {
           key: "3",
           label: "Kategori Listesi",
-          path: "/admin/categories",
+          path: "/alfa/categories",
           onClick: () => {
-            navigate(`/admin/categories`);
+            navigate(`/alfa/categories`);
           },
         },
         {
           key: "4",
           label: "Yeni Kategori Oluştur",
-          path: "/admin/categories/create",
+          path: "/alfa/categories/create",
           onClick: () => {
-            navigate("/admin/categories/create");
+            navigate("/alfa/categories/create");
           },
         },
       ],
@@ -66,17 +63,17 @@ const AdminLayout = ({ children }) => {
         {
           key: "6",
           label: "Ürün Listesi",
-          path: "/admin/products",
+          path: "/alfa/products",
           onClick: () => {
-            navigate(`/admin/products`);
+            navigate(`/alfa/products`);
           },
         },
         {
           key: "7",
           label: "Yeni Ürün Oluştur",
-          path: "/admin/products/create",
+          path: "/alfa/products/create",
           onClick: () => {
-            navigate("/admin/products/create");
+            navigate("/alfa/products/create");
           },
         },
       ],
@@ -85,22 +82,22 @@ const AdminLayout = ({ children }) => {
       key: "8",
       icon: <BarcodeOutlined />,
       label: "Kuponlar",
-      path: "/admin/coupons",
+      path: "/alfa/coupons",
       children: [
         {
           key: "9",
           label: "Kupon Listesi",
-          path: "/admin/coupons",
+          path: "/alfa/coupons",
           onClick: () => {
-            navigate(`/admin/coupons`);
+            navigate(`/alfa/coupons`);
           },
         },
         {
           key: "10",
           label: "Yeni Kupon Oluştur",
-          path: "/admin/coupons/create",
+          path: "/alfa/coupons/create",
           onClick: () => {
-            navigate("/admin/coupons/create");
+            navigate("/alfa/coupons/create");
           },
         },
       ],
@@ -115,17 +112,17 @@ const AdminLayout = ({ children }) => {
         {
           key: "12",
           label: "Blog Listesi",
-          path: "/admin/blog",
+          path: "/alfa/blog",
           onClick: () => {
-            navigate(`/admin/blog`);
+            navigate(`/alfa/blog`);
           },
         },
         {
           key: "13",
           label: "Yeni Blog Oluştur",
-          path: "/admin/blog/create",
+          path: "/alfa/blog/create",
           onClick: () => {
-            navigate("/admin/blog/create");
+            navigate("/alfa/blog/create");
           },
         },
       ],
@@ -139,17 +136,17 @@ const AdminLayout = ({ children }) => {
         {
           key: "15",
           label: "Slider Listesi",
-          path: "/admin/slider",
+          path: "/alfa/slider",
           onClick: () => {
-            navigate(`/admin/slider`);
+            navigate(`/alfa/slider`);
           },
         },
         {
           key: "16",
           label: "Yeni Slider Oluştur",
-          path: "/admin/slider/create",
+          path: "/alfa/slider/create",
           onClick: () => {
-            navigate("/admin/slider/create");
+            navigate("/alfa/slider/create");
           },
         },
       ],
@@ -160,25 +157,25 @@ const AdminLayout = ({ children }) => {
       label: "Logo",
       path: "/logo",
       onClick: () => {
-        navigate("/admin/logo");
+        navigate("/alfa/logo");
       },
     },
     {
       key: "18",
       icon: <UserOutlined />,
       label: "Kullanıcı Listesi",
-      path: "/admin/users",
+      path: "/alfa/users",
       onClick: () => {
-        navigate(`/admin/users`);
+        navigate(`/alfa/users`);
       },
     },
     {
       key: "19",
       icon: <ShoppingCartOutlined />,
       label: "Siparişler",
-      path: "/admin/orders",
+      path: "/alfa/orders",
       onClick: () => {
-        navigate(`/admin/orders`);
+        navigate(`/alfa/orders`);
       },
     },
     {
@@ -186,7 +183,7 @@ const AdminLayout = ({ children }) => {
       icon: <ContactsOutlined />,
       label: "Sorular",
       onClick: () => {
-        navigate("/admin/contact");
+        navigate("/alfa/contact");
       },
     },
     {
@@ -229,51 +226,51 @@ const AdminLayout = ({ children }) => {
       }
     }
   };
-    return (
-      <div className="admin-layout">
-        <Layout
-          style={{
-            minHeight: "100vh",
-          }}
-        >
-          <Sider width={200} theme="dark">
-            <Menu
-              mode="vertical"
+  return (
+    <div className="admin-layout">
+      <Layout
+        style={{
+          minHeight: "100vh",
+        }}
+      >
+        <Sider width={200} theme="dark">
+          <Menu
+            mode="vertical"
+            style={{
+              height: "100%",
+            }}
+            items={menuItems}
+            defaultSelectedKeys={[getActiveKey()]}
+          />
+        </Sider>
+        <Layout>
+          <Header>
+            <div
               style={{
-                height: "100%",
+                display: "flex",
+                justifyContent: "space-between",
+                color: "white",
               }}
-              items={menuItems}
-              defaultSelectedKeys={[getActiveKey()]}
-            />
-          </Sider>
-          <Layout>
-            <Header>
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  color: "white",
-                }}
-              >
-                <h2>{[getActiveLabel()]}</h2>
-                <h2>Admin Paneli</h2>
-              </div>
-            </Header>
-            <Content>
-              <div
-                className="site-layout-background"
-                style={{
-                  padding: "24px 50px",
-                  minHeight: 360,
-                }}
-              >
-                {children}
-              </div>
-            </Content>
-          </Layout>
+            >
+              <h2>{[getActiveLabel()]}</h2>
+              <h2>Admin Paneli</h2>
+            </div>
+          </Header>
+          <Content>
+            <div
+              className="site-layout-background"
+              style={{
+                padding: "24px 50px",
+                minHeight: 360,
+              }}
+            >
+              {children}
+            </div>
+          </Content>
         </Layout>
-      </div>
-    );
+      </Layout>
+    </div>
+  );
 };
 
 export default AdminLayout;

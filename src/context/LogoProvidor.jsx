@@ -24,7 +24,6 @@ const LogoProvider = ({ children }) => {
     setLogo();
   }, [apiUrl]);
 
-  console.log(logoVeri[0]);
   return (
     <LogoContext.Provider
       value={{

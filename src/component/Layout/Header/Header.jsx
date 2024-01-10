@@ -219,7 +219,7 @@ export default function Header({ setIsSearchShow }) {
               <div className="header-right-links">
                 {user ? (
                   // rol === "admin" ? (
-                  //   <Link to={location.href = "/admin"} className="header-account">
+                  //   <Link to={location.href = "/alfa"} className="header-account">
                   //     <i className="bi bi-person"></i>
                   //   </Link>
                   // ) : (

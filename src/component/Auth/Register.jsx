@@ -27,6 +27,7 @@ const Register = () => {
       });
       if (response.ok) {
         const data = await response.json();
+        localStorage.removeItem("user");
         localStorage.setItem("user", JSON.stringify(data));
         message.success("Kayıt Başarılı");
         navigate("/");

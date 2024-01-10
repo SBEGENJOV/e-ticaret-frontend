@@ -47,7 +47,7 @@ function App() {
       <Route path="/blog/:id" element={<BlogDetailsPage />} />
       <Route path="/blog" element={<Blogs />} />
       <Route path="/success" element={<Success />} />
-      <Route path="/admin/*">
+      <Route path="/alfa/*">
         <Route path="users" element={<AdminUserPage />} />
         <Route path="categories" element={<CategoryPage />} />
         <Route path="categories/create" element={<CreateCategoryPage />} />

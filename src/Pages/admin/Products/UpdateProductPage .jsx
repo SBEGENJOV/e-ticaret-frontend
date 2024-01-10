@@ -83,7 +83,7 @@ const UpdateProductPage = () => {
 
       if (response.ok) {
         message.success("Ürün başarıyla güncellendi.");
-        navigate("/admin/products");
+        navigate("/alfa/products");
       } else {
         message.error("Ürün güncellenirken bir hata oluştu.");
       }
