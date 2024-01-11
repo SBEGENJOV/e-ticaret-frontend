@@ -14,11 +14,17 @@ import {
   FileImageOutlined,
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const { Sider, Header, Content } = Layout;
 
 const AdminLayout = ({ children }) => {
   const navigate = useNavigate();
+  useEffect(() => {
+    if (window.location.pathname.startsWith("/")) {
+      navigate("/alfa");
+    }
+  }, [navigate]);
 
   const menuItems = [
     {

@@ -4,10 +4,12 @@ import Footer from "../component/Layout/Footer/Footer";
 import Proptypes from "prop-types";
 import Search from "../component/Modals/Search/Search";
 import Dialog from "../component/Modals/Dialog/Dialog";
+import { useLocation } from "react-router-dom";
 
 const MainLayout = ({ children }) => {
   const [isSearchShow, setIsSearchShow] = useState(false);
   const [isDialogShow, setIsDialogShow] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const dialogStatus = localStorage.getItem("dialog")
@@ -23,7 +25,11 @@ const MainLayout = ({ children }) => {
       <Dialog isDialogShow={isDialogShow} setIsDialogShow={setIsDialogShow} />
       <Search isSearchShow={isSearchShow} setIsSearchShow={setIsSearchShow} />
       <Header setIsSearchShow={setIsSearchShow} />
-      {children}
+      {location.pathname === "/alfa" ? (
+        <h1 style={{textAlign:"center", margin:"10%"}}>404 Not Found</h1>
+      ) : (
+        children
+      )}
       <Footer />
     </div>
   );

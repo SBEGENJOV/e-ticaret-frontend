@@ -27,7 +27,6 @@ const Sliders = ({ count }) => {
     };
     fetchSlider();
   }, [apiUrl]);
-console.log(count);
   const [currentSlide, setCurrentSlide] = useState(0);
   const nextSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % count);
