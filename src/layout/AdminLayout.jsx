@@ -24,7 +24,7 @@ const AdminLayout = ({ children }) => {
     if (window.location.pathname.startsWith("/")) {
       navigate("/alfa");
     }
-  }, [navigate]);
+  }, []);
 
   const menuItems = [
     {
