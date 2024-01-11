@@ -21,7 +21,7 @@ const BlogItem = ({ blog }) => {
           <a href="#">{blog.title}</a>
         </div>
         <div className="blog-info-bottom">
-          <Link to={`blog/${blog._id}`}>Devamı İçin Tıkla</Link>
+          <Link to={`/blog/${blog._id}`}>Devamı İçin Tıkla</Link>
         </div>
       </div>
     </li>
