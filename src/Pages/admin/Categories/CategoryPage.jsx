@@ -29,7 +29,7 @@ const CategoryPage = () => {
         <Space>
           <Button
             type="primary"
-            onClick={() => navigate(`/admin/categories/update/${record._id}`)}
+            onClick={() => navigate(`/alfa/categories/update/${record._id}`)}
           >
             Güncelle
           </Button>

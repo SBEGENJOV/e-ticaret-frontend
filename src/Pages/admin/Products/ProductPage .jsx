@@ -47,7 +47,7 @@ const ProductPage = () => {
         <Space>
           <Button
             type="primary"
-            onClick={() => navigate(`/admin/products/update/${record._id}`)}
+            onClick={() => navigate(`/alfa/products/update/${record._id}`)}
           >
             Güncelle
           </Button>

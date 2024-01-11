@@ -29,7 +29,7 @@ const LogoPage = () => {
         <Space>
           <Button
             type="primary"
-            onClick={() => navigate(`/admin/logo/update/${record._id}`)}
+            onClick={() => navigate(`/alfa/logo/update/${record._id}`)}
           >
             Güncelle
           </Button>

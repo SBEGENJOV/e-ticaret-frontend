@@ -24,7 +24,8 @@ const SliderPage = () => {
       title: "Aktiflik",
       dataIndex: "isActive",
       key: "isActive",
-      render: (isActive) =>(isActive ? <b>Slider Aktif</b> : <b>Slider Aktif Degil</b>),
+      render: (isActive) =>
+        isActive ? <b>Slider Aktif</b> : <b>Slider Aktif Degil</b>,
     },
     {
       title: "İşlemler",
@@ -40,13 +41,11 @@ const SliderPage = () => {
             cancelText="No"
             onConfirm={() => activeSlider(record._id)}
           >
-            <Button type="default" >
-              Durum Degiştir
-            </Button>
+            <Button type="default">Durum Degiştir</Button>
           </Popconfirm>
           <Button
             type="primary"
-            onClick={() => navigate(`/admin/slider/update/${record._id}`)}
+            onClick={() => navigate(`/alfa/slider/update/${record._id}`)}
           >
             Güncelle
           </Button>
@@ -103,9 +102,12 @@ const SliderPage = () => {
   };
   const activeSlider = async (categoryId) => {
     try {
-      const response = await fetch(`${apiUrl}/api/slider/active/${categoryId}`, {
-        method: "PUT",
-      });
+      const response = await fetch(
+        `${apiUrl}/api/slider/active/${categoryId}`,
+        {
+          method: "PUT",
+        }
+      );
 
       if (response.ok) {
         message.success("Slider başarıyla etkinleştirildi.");

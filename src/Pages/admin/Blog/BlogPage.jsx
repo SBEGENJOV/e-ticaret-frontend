@@ -35,7 +35,7 @@ const BlogPage = () => {
         <Space>
           <Button
             type="primary"
-            onClick={() => navigate(`/admin/blog/update/${record._id}`)}
+            onClick={() => navigate(`/alfa/blog/update/${record._id}`)}
           >
             Güncelle
           </Button>
